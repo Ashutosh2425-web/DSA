@@ -1,24 +1,24 @@
 public class SortColors {
+    public void swaps(int[] arr,int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
     public void sortcolors(int[] nums){
-        int left=0;
+        int low=0;
         int mid=0;
-        int right=nums.length-1;
-        
-        while(mid <= right){
+        int high=nums.length-1;
 
+        while(mid <= high){
             if(nums[mid]==0){
-                int temp=nums[mid];
-                nums[mid]=nums[left];
-                nums[left]=temp;
-                 left++;
-                 mid++;
+                swaps(nums,low,mid);
+                low++;
+                mid++;
             }else if(nums[mid]==1){
                 mid++;
-            }else if(nums[mid]==2){
-                int temp=nums[mid];
-                nums[mid]=nums[right];
-                nums[right]=temp;
-                right--;
+            }else{
+                swaps(nums,mid,high);
+                high--;
             }
         }
     }

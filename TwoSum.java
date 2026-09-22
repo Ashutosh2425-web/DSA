@@ -1,17 +1,18 @@
-import java.util.HashMap;
-class TwoSum{
-   public int[] twosum(int[]nums,int target){
-    HashMap<Integer,Integer> map=new HashMap<>();
-    for(int i=0; i<nums.length;i++){
-        int need=target-nums[i];
-        if(map.containsKey(need)){
-            return new int[]{map.get(need),i};
-        }
-        map.put(nums[i], i);
-    }
-    return null;
-    }
-}
+//import java.util.HashMap;
+//class TwoSum{
+   //public int[] twosum(int[]nums,int target){
+    //HashMap<Integer,Integer> map=new HashMap<>();
+    //for(int i=0; i<nums.length;i++){
+      //  int need=target-nums[i];
+      //  if(map.containsKey(need)){
+       //     return new int[]{map.get(need),i};
+       // }
+      //  map.put(nums[i], i);
+    //}
+   // return null;
+    
+   // }
+//}
 //----------------------------------------------------------
 //bruteforce approach
 //class TwoSum{
@@ -26,3 +27,20 @@ class TwoSum{
         //return null;
    //}
 //}
+//----------Revision--------------//
+import java.util.HashMap;
+class Twosum{ 
+    public int[] twosum(int[] nums,int target){
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i< nums.length;i++){
+            int need=target-nums[i];
+
+            if(map.containsKey(need)){
+                return new int[]{map.get(need),i};
+            }
+            map.put(nums[i],i);
+        }
+        return new int[]{};
+    }
+}
+
